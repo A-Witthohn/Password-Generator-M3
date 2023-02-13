@@ -33,7 +33,7 @@ THEN the password is either displayed in an alert or written to the page
 
 [Github Repository](https://github.com/A-Witthohn/Password-Generator-M3)
 
-[Deployment]()
+[Deployment](https://a-witthohn.github.io/Password-Generator-M3/)
 
 ## License
 - - -
