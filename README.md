@@ -27,7 +27,7 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Template / Demo
 
-![Password Generator Demo - Includes what password in proper field looks like](./02-Challenge/Assets/Password%20Generator%20demo.png)
+![Password Generator Demo - Includes what password in proper field looks like](./Assets/Password%20Generator%20demo.png)
 
 ## Github & Deployment
 
