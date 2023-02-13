@@ -26,14 +26,14 @@ function generatePassword() {
   var length = prompt("How long would you like your password to be? (It must be atleast 8 characters and no longer than 128.)")
 
   //Prompts user for password length again if outside parameters
-    if (  length < 8 ||  length > 128){
+    if ( Math.ceil(length) < 8 ||  Math.ceil(length) > 128){
     alert("Password length must be at least 8 characters and no greater than 128!")
     var length = prompt("How long would you like your password to be? (It must be atleast 8 characters and no longer than 128.)");
   }
 
   //alerts user of length if length is within parameters above
-  if( length >= 8 || length <= 128){
-    alert("Your password length will be " + length + " characters long")
+  if( Math.ceil(length) >= 8 || Math.ceil(length) <= 128){
+    alert("Your password length will be " + Math.ceil(length) + " characters long")
   };
 
   // UpperCase Prompt, includes alert if true
