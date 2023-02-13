@@ -12,10 +12,10 @@ function writePassword() {
 
 
 // arrays of Possible characters to be included in password
-var UpperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-var LowerCase = ["abcdefghijklmnopqrstuvwxyz"];
-var Numbers = ["0123456789"];
-var SpecialChar = ["!#$%&)( *+,.;:=-><?\\^_~`|/"];
+var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+var lowerCase = ["abcdefghijklmnopqrstuvwxyz"];
+var numbers = ["0123456789"];
+var specialChar = ["!#$%&)( *+,.;:=-><?\\^_~`|/"];
 
 
 
@@ -31,6 +31,7 @@ function generatePassword() {
     var length = prompt("How long would you like your password to be? (It must be atleast 8 characters and no longer than 128.)");
   }
 
+  //alerts user of length if length is within parameters above
   if( length >= 8 || length <= 128){
     alert("Your password length will be " + length + "characters long")
   };
@@ -72,10 +73,10 @@ function generatePassword() {
 
 //concat(adds) all possible character types to be used in password. only adds if confirmed. (tested = true)
   var passwordPosibilities = "";
-  if (includeUpperCase) { passwordPosibilities += UpperCase; }
-  if (includeLowerCase) { passwordPosibilities += LowerCase; }
-  if (includeNumbers) { passwordPosibilities += Numbers; }
-  if (includeSpecialChar) { passwordPosibilities += SpecialChar; }
+  if (includeUpperCase) { passwordPosibilities += upperCase; }
+  if (includeLowerCase) { passwordPosibilities += lowerCase; }
+  if (includeNumbers) { passwordPosibilities += numbers; }
+  if (includeSpecialChar) { passwordPosibilities += specialChar; }
 
 
   
