@@ -33,7 +33,7 @@ function generatePassword() {
 
   //alerts user of length if length is within parameters above
   if( length >= 8 || length <= 128){
-    alert("Your password length will be " + length + "characters long")
+    alert("Your password length will be " + length + " characters long")
   };
 
   // UpperCase Prompt, includes alert if true
