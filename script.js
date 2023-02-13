@@ -32,7 +32,7 @@ function generatePassword() {
   }
 
   //alerts user of length if length is within parameters above
-  if( (length) >= 8 && Math.ceil(length) <= 128){
+  if( (length) >= 8 && (length) <= 128){
     alert("Your password length will be " + Math.ceil(length) + " characters long")
   };
 
