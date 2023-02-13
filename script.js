@@ -26,7 +26,7 @@ function generatePassword() {
   var length = prompt("How long would you like your password to be? (It must be atleast 8 characters and no longer than 128.)")
 
   //Prompts user for password length again if outside parameters
-    if ( (length) < 8 ||  (length) > 128){
+    while ( (length) < 8 ||  (length) > 128){
     alert("Password length must be at least 8 characters and no greater than 128!")
     var length = prompt("How long would you like your password to be? (It must be atleast 8 characters and no longer than 128.)");
   }
@@ -59,7 +59,7 @@ function generatePassword() {
 
 
 // If statement used if all conditions are false. reprompts user to include a min. of 1 type
-  if (includeUpperCase === false && includeLowerCase === false && includeNumbers === false && includeSpecialChar === false){
+  while (includeUpperCase === false && includeLowerCase === false && includeNumbers === false && includeSpecialChar === false){
     alert("Your password must consist of one of the following character types (Uppercase,Lowercase, Numbers, or Special characters.)");
     alert("Lets Try Again!");
      includeUpperCase = confirm("Would you like to include Uppercase characters in your password?");
