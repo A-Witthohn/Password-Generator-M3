@@ -11,11 +11,11 @@ function writePassword() {
 }
 
 
-// Possible characters to be included in password
+// arrays of Possible characters to be included in password
 var UpperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 var LowerCase = ["abcdefghijklmnopqrstuvwxyz"];
 var Numbers = ["0123456789"];
-var SpecialChar = ["!#$%&)( *+,.;:=-><?\\^_~`|/"]
+var SpecialChar = ["!#$%&)( *+,.;:=-><?\\^_~`|/"];
 
 
 
@@ -25,20 +25,39 @@ function generatePassword() {
   var password = "";
   var length = prompt("How long would you like your password to be? (It must be atleast 8 characters and no longer than 128.)")
 
-
-
-    if(  length < 8 ||  length > 128){
+  //Prompts user for password length again if outside parameters
+    if (  length < 8 ||  length > 128){
     alert("Password length must be at least 8 characters and no greater than 128!")
     var length = prompt("How long would you like your password to be? (It must be atleast 8 characters and no longer than 128.)");
   }
 
+  if( length >= 8 || length <= 128){
+    alert("Your password length will be " + length + "characters long")
+  };
+
+  // UpperCase Prompt, includes alert if true
   var includeUpperCase = confirm("Would you like to include Uppercase characters in your password?");
+  if(includeUpperCase === true)
+  alert("Your password has the possibility to contain uppercase characters (*Note, this does not gurantee an uppercase character to be used. Password is generated at random).");
+
+  //Lowercase Prompt, includes alert if true
   var includeLowerCase = confirm("Would you like to include Lowercase characters in your password?");
+  if(includeLowerCase === true)
+  alert("Your password has the possibility to contain lowercase characters(*Note, this does not gurantee a lowercase character to be used. Password is generated at random).");
+
+  //Numbers Prompt, inlcudes alert if true
   var includeNumbers = confirm("Would you like to include numbers in your password?");
+  if(includeNumbers === true)
+  alert("Your password has the possibility to contain numbers (*Note, this does not gurantee a number to be used. Password is generated at random).");
+
+  //Special Character Prompt, includes alert if true
   var includeSpecialChar = confirm("Would you like to include special characters in your password?");
+  if(includeSpecialChar === true)
+  alert("Your password has the possibility to contain special characters (*Note, this does not gurantee a special character to be used. Password is generated at random).");
 
 
 
+// If statement used if all conditions are false. reprompts user to include a min. of 1 type
   if (includeUpperCase === false && includeLowerCase === false && includeNumbers === false && includeSpecialChar === false){
     alert("Your password must consist of one of the following character types (Uppercase,Lowercase, Numbers, or Special characters.)");
     alert("Lets Try Again!");
@@ -50,19 +69,6 @@ function generatePassword() {
 
 
 
-  if(includeUpperCase === true)
-  alert("Your password has the possibility to contain uppercase characters (*Note, this does not gurantee an uppercase character to be used. Password is generated at random).");
-
-  if(includeLowerCase === true)
-  alert("Your password has the possibility to contain lowercase characters(*Note, this does not gurantee a lowercase character to be used. Password is generated at random).");
-
-  if(includeNumbers === true)
-  alert("Your password has the possibility to contain numbers (*Note, this does not gurantee a number to be used. Password is generated at random).");
-
-  if(includeSpecialChar === true)
-  alert("Your password has the possibility to contain special characters (*Note, this does not gurantee a special character to be used. Password is generated at random).");
-
-
 
 //concat(adds) all possible character types to be used in password. only adds if confirmed. (tested = true)
   var passwordPosibilities = "";
@@ -70,18 +76,16 @@ function generatePassword() {
   if (includeLowerCase) { passwordPosibilities += LowerCase; }
   if (includeNumbers) { passwordPosibilities += Numbers; }
   if (includeSpecialChar) { passwordPosibilities += SpecialChar; }
+
+
   
-  // Generate the password
+  // created logic to generate password of users specified length and return it in field
   for (var i = 0; i < length; i++) {
     password += passwordPosibilities.charAt(Math.floor(Math.random() * passwordPosibilities.length));
   }
   
   return password;
 }
-
-
-
-
 
 
 
